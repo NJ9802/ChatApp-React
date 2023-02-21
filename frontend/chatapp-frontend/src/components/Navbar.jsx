@@ -33,7 +33,7 @@ function Navbar() {
   const colorMode = useContext(ColorModeContext);
 
   const [anchorElUser, setAnchorElUser] = useState(null);
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(1);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -187,8 +187,8 @@ function Navbar() {
           value={value}
           onChange={handleChange}
           aria-label="icon position tabs example"
-          textColor='secondary'
-          indicatorColor='secondary'
+          textColor="secondary"
+          indicatorColor="secondary"
           centered
           sx={{
             height: "50px !important",
@@ -204,7 +204,7 @@ function Navbar() {
           <Tab
             sx={styles.tabs.labels}
             icon={
-              <Badge badgeContent={1} color="secondary">
+              <Badge badgeContent={10} color="secondary">
                 <ChatOutlinedIcon style={styles.tabs.icons} />
               </Badge>
             }
