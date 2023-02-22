@@ -7,6 +7,7 @@ import {
 
 import icon from "../assets/react.svg";
 import { Box, useTheme } from "@mui/material";
+import { Link } from "react-router-dom";
 import { tokens } from "../theme";
 
 const ConversationIndex = () => {
@@ -17,11 +18,13 @@ const ConversationIndex = () => {
     conversationList: {
       height: "calc(100vh - 114px)",
     },
-    conversationItem: { backgroundColor: colors.primary[900] },
+    conversationItem: { backgroundColor: "transparent" },
   };
   return (
     <Box
       sx={{
+        backgroundColor: colors.primary[900],
+
         "& .cs-conversation__name": {
           color: colors.grey[100],
         },
@@ -40,153 +43,209 @@ const ConversationIndex = () => {
       }}
     >
       <ConversationList style={style.conversationList}>
-        <Conversation
-          style={style.conversationItem}
-          name="Lilly"
-          lastSenderName="Lilly"
-          info="Yes i can do it for you"
-          lastActivityTime="43 min"
-          unreadCnt={3}
-        >
-          <Avatar src={icon} name="Lilly" />
-        </Conversation>
+        <div as={Conversation}>
+          <Link to="chat" style={{ textDecoration: "none" }}>
+            <Conversation
+              style={style.conversationItem}
+              name="Lilly"
+              lastSenderName="Lilly"
+              info="Yes i can do it for you"
+              lastActivityTime="43 min"
+              unreadCnt={3}
+            >
+              <Avatar src={icon} name="Lilly" />
+            </Conversation>
+          </Link>
+        </div>
 
-        <Conversation
-          style={style.conversationItem}
-          name="Joe"
-          lastSenderName="Joe"
-          info="Yes i can do it for you"
-          lastActivityTime="43 min"
-          unreadCnt={3}
-        >
-          <Avatar src={icon} name="Joe" />
-        </Conversation>
-        <Conversation
-          style={style.conversationItem}
-          name="Joe"
-          lastSenderName="Joe"
-          info="Yes i can do it for you"
-          lastActivityTime="43 min"
-          unreadCnt={3}
-        >
-          <Avatar src={icon} name="Joe" />
-        </Conversation>
-        <Conversation
-          style={style.conversationItem}
-          name="Joe"
-          lastSenderName="Joe"
-          info="Yes i can do it for you"
-          lastActivityTime="43 min"
-          unreadCnt={3}
-        >
-          <Avatar src={icon} name="Joe" />
-        </Conversation>
-        <Conversation
-          style={style.conversationItem}
-          name="Joe"
-          lastSenderName="Joe"
-          info="Yes i can do it for you"
-          lastActivityTime="43 min"
-          unreadCnt={3}
-        >
-          <Avatar src={icon} name="Joe" />
-        </Conversation>
-        <Conversation
-          style={style.conversationItem}
-          name="Joe"
-          lastSenderName="Joe"
-          info="Yes i can do it for you"
-          lastActivityTime="43 min"
-          unreadCnt={3}
-        >
-          <Avatar src={icon} name="Joe" />
-        </Conversation>
-        <Conversation
-          style={style.conversationItem}
-          name="Joe"
-          lastSenderName="Joe"
-          info="Yes i can do it for you"
-          lastActivityTime="43 min"
-          unreadCnt={3}
-        >
-          <Avatar src={icon} name="Joe" />
-        </Conversation>
-        <Conversation
-          style={style.conversationItem}
-          name="Joe"
-          lastSenderName="Joe"
-          info="Yes i can do it for you"
-          lastActivityTime="43 min"
-          unreadCnt={3}
-        >
-          <Avatar src={icon} name="Joe" />
-        </Conversation>
+        <div as={Conversation}>
+          <Link to="chat" style={{ textDecoration: "none" }}>
+            <Conversation
+              style={style.conversationItem}
+              name="Joe"
+              lastSenderName="Joe"
+              info="Yes i can do it for you"
+              lastActivityTime="43 min"
+              unreadCnt={3}
+            >
+              <Avatar src={icon} name="Joe" />
+            </Conversation>
+          </Link>
+        </div>
+        <div as={Conversation}>
+          <Link to="chat" style={{ textDecoration: "none" }}>
+            <Conversation
+              style={style.conversationItem}
+              name="Joe"
+              lastSenderName="Joe"
+              info="Yes i can do it for you"
+              lastActivityTime="43 min"
+              unreadCnt={3}
+            >
+              <Avatar src={icon} name="Joe" />
+            </Conversation>
+          </Link>
+        </div>
+        <div as={Conversation}>
+          <Link to="chat" style={{ textDecoration: "none" }}>
+            <Conversation
+              style={style.conversationItem}
+              name="Joe"
+              lastSenderName="Joe"
+              info="Yes i can do it for you"
+              lastActivityTime="43 min"
+              unreadCnt={3}
+            >
+              <Avatar src={icon} name="Joe" />
+            </Conversation>
+          </Link>
+        </div>
+        <div as={Conversation}>
+          <Link to="chat" style={{ textDecoration: "none" }}>
+            <Conversation
+              style={style.conversationItem}
+              name="Joe"
+              lastSenderName="Joe"
+              info="Yes i can do it for you"
+              lastActivityTime="43 min"
+              unreadCnt={3}
+            >
+              <Avatar src={icon} name="Joe" />
+            </Conversation>
+          </Link>
+        </div>
+        <div as={Conversation}>
+          <Link to="chat" style={{ textDecoration: "none" }}>
+            <Conversation
+              style={style.conversationItem}
+              name="Joe"
+              lastSenderName="Joe"
+              info="Yes i can do it for you"
+              lastActivityTime="43 min"
+              unreadCnt={3}
+            >
+              <Avatar src={icon} name="Joe" />
+            </Conversation>
+          </Link>
+        </div>
+        <div as={Conversation}>
+          <Link to="chat" style={{ textDecoration: "none" }}>
+            <Conversation
+              style={style.conversationItem}
+              name="Joe"
+              lastSenderName="Joe"
+              info="Yes i can do it for you"
+              lastActivityTime="43 min"
+              unreadCnt={3}
+            >
+              <Avatar src={icon} name="Joe" />
+            </Conversation>
+          </Link>
+        </div>
+        <div as={Conversation}>
+          <Link to="chat" style={{ textDecoration: "none" }}>
+            <Conversation
+              style={style.conversationItem}
+              name="Joe"
+              lastSenderName="Joe"
+              info="Yes i can do it for you"
+              lastActivityTime="43 min"
+              unreadCnt={3}
+            >
+              <Avatar src={icon} name="Joe" />
+            </Conversation>
+          </Link>
+        </div>
 
-        <Conversation
-          style={style.conversationItem}
-          name="Emily"
-          lastSenderName="Emily"
-          info="Yes i can do it for you"
-          lastActivityTime="43 min"
-          unreadCnt={3}
-        >
-          <Avatar src={icon} name="Emily" />
-        </Conversation>
+        <div as={Conversation}>
+          <Link to="chat" style={{ textDecoration: "none" }}>
+            <Conversation
+              style={style.conversationItem}
+              name="Emily"
+              lastSenderName="Emily"
+              info="Yes i can do it for you"
+              lastActivityTime="43 min"
+              unreadCnt={3}
+            >
+              <Avatar src={icon} name="Emily" />
+            </Conversation>
+          </Link>
+        </div>
 
-        <Conversation
-          style={style.conversationItem}
-          name="Kai"
-          lastSenderName="Kai"
-          info="Yes i can do it for you"
-          lastActivityTime="43 min"
-          unreadCnt={3}
-        >
-          <Avatar src={icon} name="Kai" />
-        </Conversation>
+        <div as={Conversation}>
+          <Link to="chat" style={{ textDecoration: "none" }}>
+            <Conversation
+              style={style.conversationItem}
+              name="Kai"
+              lastSenderName="Kai"
+              info="Yes i can do it for you"
+              lastActivityTime="43 min"
+              unreadCnt={3}
+            >
+              <Avatar src={icon} name="Kai" />
+            </Conversation>
+          </Link>
+        </div>
 
-        <Conversation
-          style={style.conversationItem}
-          name="Akane"
-          lastSenderName="Akane"
-          info="Yes i can do it for you"
-          lastActivityTime="43 min"
-          unreadCnt={3}
-        >
-          <Avatar src={icon} name="Akane" />
-        </Conversation>
+        <div as={Conversation}>
+          <Link to="chat" style={{ textDecoration: "none" }}>
+            <Conversation
+              style={style.conversationItem}
+              name="Akane"
+              lastSenderName="Akane"
+              info="Yes i can do it for you"
+              lastActivityTime="43 min"
+              unreadCnt={3}
+            >
+              <Avatar src={icon} name="Akane" />
+            </Conversation>
+          </Link>
+        </div>
 
-        <Conversation
-          style={style.conversationItem}
-          name="Eliot"
-          lastSenderName="Eliot"
-          info="Yes i can do it for you"
-          lastActivityTime="43 min"
-          unreadCnt={3}
-        >
-          <Avatar src={icon} name="Eliot" />
-        </Conversation>
+        <div as={Conversation}>
+          <Link to="chat" style={{ textDecoration: "none" }}>
+            <Conversation
+              style={style.conversationItem}
+              name="Eliot"
+              lastSenderName="Eliot"
+              info="Yes i can do it for you"
+              lastActivityTime="43 min"
+              unreadCnt={3}
+            >
+              <Avatar src={icon} name="Eliot" />
+            </Conversation>
+          </Link>
+        </div>
 
-        <Conversation
-          style={style.conversationItem}
-          name="Zoe"
-          lastSenderName="Zoe"
-          info="Yes i can do it for you"
-          lastActivityTime="43 min"
-          unreadCnt={3}
-        >
-          <Avatar src={icon} name="Zoe" />
-        </Conversation>
+        <div as={Conversation}>
+          <Link to="chat" style={{ textDecoration: "none" }}>
+            <Conversation
+              style={style.conversationItem}
+              name="Zoe"
+              lastSenderName="Zoe"
+              info="Yes i can do it for you"
+              lastActivityTime="43 min"
+              unreadCnt={3}
+            >
+              <Avatar src={icon} name="Zoe" />
+            </Conversation>
+          </Link>
+        </div>
 
-        <Conversation
-          style={style.conversationItem}
-          name="Patrik"
-          lastSenderName="Patrik"
-          info="Yes i can do it for you"
-          lastActivityTime="43 min"
-          unreadCnt={3}
-        >
-          <Avatar src={icon} name="Patrik" />
-        </Conversation>
+        <div as={Conversation}>
+          <Link to="chat" style={{ textDecoration: "none" }}>
+            <Conversation
+              style={style.conversationItem}
+              name="Patrik"
+              lastSenderName="Patrik"
+              info="Yes i can do it for you"
+              lastActivityTime="43 min"
+              unreadCnt={3}
+            >
+              <Avatar src={icon} name="Patrik" />
+            </Conversation>
+          </Link>
+        </div>
       </ConversationList>
     </Box>
   );
