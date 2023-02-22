@@ -13,7 +13,6 @@ const App = () => {
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <div className="app"></div>
           <main>
             <Routes>
               <Route index path="/" element={<Home />} />

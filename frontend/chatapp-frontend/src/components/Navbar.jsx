@@ -175,7 +175,6 @@ function Navbar() {
       </AppBar>
       <Box
         sx={{
-          height: "20px",
           "& .MuiButtonBase-root": {
             minHeight: "30px !important",
             p: "2px 15px",
