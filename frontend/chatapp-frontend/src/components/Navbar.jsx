@@ -120,7 +120,13 @@ function Navbar() {
               sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
             ></Box>
 
-            <Box display="flex" alignItems="center">
+            <Box
+              display="flex"
+              alignItems="center"
+              sx={{
+                "& button": { color: colors.grey[200] },
+              }}
+            >
               <Box>
                 <IconButton onClick={colorMode.toggleColorMode}>
                   {theme.palette.mode === "dark" ? (

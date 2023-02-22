@@ -2,23 +2,43 @@ import {
   Avatar,
   ChatContainer,
   ConversationHeader,
-  InfoButton,
   Message,
   MessageInput,
   MessageList,
   MessageSeparator,
   TypingIndicator,
-  VideoCallButton,
-  VoiceCallButton,
 } from "@chatscope/chat-ui-kit-react";
-import { Box, useTheme } from "@mui/material";
+import {
+  Box,
+  Menu,
+  MenuItem,
+  Typography,
+  IconButton,
+  useTheme,
+} from "@mui/material";
 import { tokens } from "../../theme";
-import icon from "../../assets/react.svg";
 import { Link } from "react-router-dom";
+import icon from "../../assets/react.svg";
+import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
+import VideoCallOutlinedIcon from "@mui/icons-material/VideoCallOutlined";
+import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
+import { useState } from "react";
+
+const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const ChatRoom = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
+  const [anchorElUser, setAnchorElUser] = useState(null);
+
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
 
   return (
     <Box
@@ -27,6 +47,9 @@ const ChatRoom = () => {
 
         "& .cs-conversation-header": {
           backgroundColor: colors.primary[400],
+        },
+        "& .cs-button--arrow": {
+          color: colors.grey[200],
         },
 
         "& .cs-conversation-header__user-name": {
@@ -53,9 +76,23 @@ const ChatRoom = () => {
             info="Active 10 mins ago"
           />
           <ConversationHeader.Actions>
-            <VoiceCallButton />
-            <VideoCallButton />
-            <InfoButton />
+            <Box
+              sx={{
+                "& button": { color: colors.grey[200] },
+              }}
+            >
+              <IconButton>
+                <LocalPhoneOutlinedIcon />
+              </IconButton>
+
+              <IconButton>
+                <VideoCallOutlinedIcon />
+              </IconButton>
+
+              <IconButton onClick={handleOpenUserMenu}>
+                <MoreVertOutlinedIcon />
+              </IconButton>
+            </Box>
           </ConversationHeader.Actions>
         </ConversationHeader>
         <MessageList
@@ -299,6 +336,28 @@ const ChatRoom = () => {
         </MessageList>
         <MessageInput placeholder="Type message here" />
       </ChatContainer>
+      <Menu
+        sx={{ mt: "45px" }}
+        id="menu-appbar"
+        anchorEl={anchorElUser}
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        keepMounted
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        open={Boolean(anchorElUser)}
+        onClose={handleCloseUserMenu}
+      >
+        {settings.map((setting) => (
+          <MenuItem key={setting} onClick={handleCloseUserMenu}>
+            <Typography textAlign="center">{setting}</Typography>
+          </MenuItem>
+        ))}
+      </Menu>
     </Box>
   );
 };
