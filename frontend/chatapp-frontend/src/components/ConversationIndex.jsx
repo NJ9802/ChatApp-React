@@ -1,10 +1,8 @@
-import { useState, useRef, useEffect } from "react";
 import styles from "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import {
   ConversationList,
   Conversation,
   Avatar,
-  MainContainer,
 } from "@chatscope/chat-ui-kit-react";
 
 import icon from "../assets/react.svg";
@@ -30,6 +28,15 @@ const ConversationIndex = () => {
         "& .cs-conversation__info": {
           color: colors.grey[300],
         },
+        "& .cs-conversation__last-activity-time": {
+          minWidth: "40px",
+          color: colors.grey[100],
+        },
+        "& .cs-conversation__unread": {
+          backgroundColor: colors.greenAccent[400],
+          color: colors.grey[900],
+          m: "2px 10px 0 0",
+        },
       }}
     >
       <ConversationList style={style.conversationList}>
@@ -38,6 +45,8 @@ const ConversationIndex = () => {
           name="Lilly"
           lastSenderName="Lilly"
           info="Yes i can do it for you"
+          lastActivityTime="43 min"
+          unreadCnt={3}
         >
           <Avatar src={icon} name="Lilly" />
         </Conversation>
@@ -47,6 +56,8 @@ const ConversationIndex = () => {
           name="Joe"
           lastSenderName="Joe"
           info="Yes i can do it for you"
+          lastActivityTime="43 min"
+          unreadCnt={3}
         >
           <Avatar src={icon} name="Joe" />
         </Conversation>
@@ -55,6 +66,8 @@ const ConversationIndex = () => {
           name="Joe"
           lastSenderName="Joe"
           info="Yes i can do it for you"
+          lastActivityTime="43 min"
+          unreadCnt={3}
         >
           <Avatar src={icon} name="Joe" />
         </Conversation>
@@ -63,6 +76,8 @@ const ConversationIndex = () => {
           name="Joe"
           lastSenderName="Joe"
           info="Yes i can do it for you"
+          lastActivityTime="43 min"
+          unreadCnt={3}
         >
           <Avatar src={icon} name="Joe" />
         </Conversation>
@@ -71,6 +86,8 @@ const ConversationIndex = () => {
           name="Joe"
           lastSenderName="Joe"
           info="Yes i can do it for you"
+          lastActivityTime="43 min"
+          unreadCnt={3}
         >
           <Avatar src={icon} name="Joe" />
         </Conversation>
@@ -79,6 +96,8 @@ const ConversationIndex = () => {
           name="Joe"
           lastSenderName="Joe"
           info="Yes i can do it for you"
+          lastActivityTime="43 min"
+          unreadCnt={3}
         >
           <Avatar src={icon} name="Joe" />
         </Conversation>
@@ -87,6 +106,8 @@ const ConversationIndex = () => {
           name="Joe"
           lastSenderName="Joe"
           info="Yes i can do it for you"
+          lastActivityTime="43 min"
+          unreadCnt={3}
         >
           <Avatar src={icon} name="Joe" />
         </Conversation>
@@ -95,6 +116,8 @@ const ConversationIndex = () => {
           name="Joe"
           lastSenderName="Joe"
           info="Yes i can do it for you"
+          lastActivityTime="43 min"
+          unreadCnt={3}
         >
           <Avatar src={icon} name="Joe" />
         </Conversation>
@@ -104,6 +127,8 @@ const ConversationIndex = () => {
           name="Emily"
           lastSenderName="Emily"
           info="Yes i can do it for you"
+          lastActivityTime="43 min"
+          unreadCnt={3}
         >
           <Avatar src={icon} name="Emily" />
         </Conversation>
@@ -113,6 +138,8 @@ const ConversationIndex = () => {
           name="Kai"
           lastSenderName="Kai"
           info="Yes i can do it for you"
+          lastActivityTime="43 min"
+          unreadCnt={3}
         >
           <Avatar src={icon} name="Kai" />
         </Conversation>
@@ -122,6 +149,8 @@ const ConversationIndex = () => {
           name="Akane"
           lastSenderName="Akane"
           info="Yes i can do it for you"
+          lastActivityTime="43 min"
+          unreadCnt={3}
         >
           <Avatar src={icon} name="Akane" />
         </Conversation>
@@ -131,6 +160,8 @@ const ConversationIndex = () => {
           name="Eliot"
           lastSenderName="Eliot"
           info="Yes i can do it for you"
+          lastActivityTime="43 min"
+          unreadCnt={3}
         >
           <Avatar src={icon} name="Eliot" />
         </Conversation>
@@ -140,6 +171,8 @@ const ConversationIndex = () => {
           name="Zoe"
           lastSenderName="Zoe"
           info="Yes i can do it for you"
+          lastActivityTime="43 min"
+          unreadCnt={3}
         >
           <Avatar src={icon} name="Zoe" />
         </Conversation>
@@ -149,6 +182,8 @@ const ConversationIndex = () => {
           name="Patrik"
           lastSenderName="Patrik"
           info="Yes i can do it for you"
+          lastActivityTime="43 min"
+          unreadCnt={3}
         >
           <Avatar src={icon} name="Patrik" />
         </Conversation>
