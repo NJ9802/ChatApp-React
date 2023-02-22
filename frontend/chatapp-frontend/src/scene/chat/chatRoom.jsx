@@ -14,6 +14,7 @@ import {
 import { Box, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import icon from "../../assets/react.svg";
+import { Link } from "react-router-dom";
 
 const ChatRoom = () => {
   const theme = useTheme();
@@ -41,6 +42,11 @@ const ChatRoom = () => {
     >
       <ChatContainer>
         <ConversationHeader>
+          <Box display="flex" alignItems="center" as={ConversationHeader.Back}>
+            <Link to="/">
+              <ConversationHeader.Back />
+            </Link>
+          </Box>
           <Avatar src={icon} name="Emily" />
           <ConversationHeader.Content
             userName="Emily"
