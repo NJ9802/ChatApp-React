@@ -1,12 +1,12 @@
 import Navbar from "../../components/Navbar";
 import { Box } from "@mui/material";
-
-import React from "react";
+import ConversationIndex from "../../components/ConversationIndex";
 
 const Home = () => {
   return (
     <Box>
       <Navbar />
+      <ConversationIndex />
     </Box>
   );
 };
