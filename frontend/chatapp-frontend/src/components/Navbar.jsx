@@ -66,7 +66,7 @@ function Navbar() {
   };
 
   return (
-    <Box>
+    <Box display={{ sm: "none" }}>
       <AppBar
         position="static"
         sx={{

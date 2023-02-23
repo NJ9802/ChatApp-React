@@ -1,12 +1,8 @@
 import {
-  Avatar,
   ChatContainer,
   ConversationHeader,
-  Message,
   MessageInput,
   MessageList,
-  MessageSeparator,
-  TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 import { Box, useTheme } from "@mui/material";
 import { tokens } from "../theme";
@@ -14,7 +10,7 @@ import icon from "../assets/react.svg";
 import ChatHeader from "./ChatHeader";
 import MessagesList from "./MessagesList";
 
-const ChatRoom = () => {
+const ChatRoom = ({ home = false }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -31,9 +27,39 @@ const ChatRoom = () => {
         <div as={ConversationHeader}>
           <ChatHeader />
         </div>
-        <div as={MessageList}>
-          <MessagesList />
-        </div>
+
+        {home ? (
+          <div as={MessageList}>
+            <Box
+              sx={{
+                height: {
+                  xs: "calc(100vh - 178.9px)",
+                  sm: "calc(100vh - 133.9px)",
+                },
+
+                backgroundColor: colors.primary[700],
+                color: colors.grey[200],
+              }}
+            >
+              <MessageList.Content
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  height: "100%",
+                  textAlign: "center",
+                  fontSize: "1.2em",
+                }}
+              >
+                This is custom content placed instead of message list
+              </MessageList.Content>
+            </Box>
+          </div>
+        ) : (
+          <div as={MessageList}>
+            <MessagesList />
+          </div>
+        )}
 
         <div as={MessageInput}>
           <Box

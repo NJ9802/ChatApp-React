@@ -1,3 +1,4 @@
+import { Routes, Route } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import { Box } from "@mui/material";
 import ConversationIndex from "../../components/ConversationIndex";
@@ -16,9 +17,7 @@ const Home = () => {
 
   return (
     <Box>
-      <Box display={{ sm: "none" }}>
-        <Navbar />
-      </Box>
+      <Navbar />
       <Box
         sx={{
           display: { xs: "none", sm: "block" },
@@ -31,7 +30,10 @@ const Home = () => {
             <ConversationListSideBar />
           </div>
           <div as={ChatContainer} style={{ display: "flex", flexGrow: 1 }}>
-            <ChatRoom />
+            <Routes>
+              <Route index path="/" element={<ChatRoom home={true} />} />
+              <Route index path="/chat" element={<ChatRoom />} />
+            </Routes>
           </div>
         </MainContainer>
       </Box>

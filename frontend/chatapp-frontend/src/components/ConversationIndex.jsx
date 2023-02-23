@@ -21,7 +21,7 @@ const ConversationIndex = () => {
     <Box
       sx={{
         height: { xs: "calc(100vh - 168px)", sm: "100vh" },
-        backgroundColor: colors.primary[900],
+        backgroundColor: colors.primary[500],
 
         "& .cs-conversation__name": {
           color: colors.grey[100],
