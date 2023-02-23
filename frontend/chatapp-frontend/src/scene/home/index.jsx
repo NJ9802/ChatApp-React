@@ -39,7 +39,9 @@ const Home = ({ home = false }) => {
           <ConversationIndex />
         </Box>
       ) : (
-        <ChatRoom />
+        <Box display={{ sm: "none" }}>
+          <ChatRoom />
+        </Box>
       )}
     </Box>
   );
