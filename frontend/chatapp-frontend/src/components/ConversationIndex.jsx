@@ -15,14 +15,12 @@ const ConversationIndex = () => {
   const colors = tokens(theme.palette.mode);
 
   const style = {
-    conversationList: {
-      height: "calc(100vh - 114px)",
-    },
     conversationItem: { backgroundColor: "transparent" },
   };
   return (
     <Box
       sx={{
+        height: { xs: "calc(100vh - 168px)", sm: "100vh" },
         backgroundColor: colors.primary[900],
 
         "& .cs-conversation__name": {
@@ -42,7 +40,7 @@ const ConversationIndex = () => {
         },
       }}
     >
-      <ConversationList style={style.conversationList}>
+      <ConversationList>
         <div as={Conversation}>
           <Link to="chat" style={{ textDecoration: "none" }}>
             <Conversation

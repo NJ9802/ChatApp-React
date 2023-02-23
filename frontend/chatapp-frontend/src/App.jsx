@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import Home from "./scene/home";
-import ChatRoom from "./scene/chat/chatRoom";
+import ChatRoom from "./components/ChatRoom";
 
 const App = () => {
   const [theme, colorMode] = useMode();

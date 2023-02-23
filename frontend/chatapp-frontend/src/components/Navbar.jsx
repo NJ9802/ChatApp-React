@@ -66,7 +66,7 @@ function Navbar() {
   };
 
   return (
-    <>
+    <Box>
       <AppBar
         position="static"
         sx={{
@@ -230,7 +230,7 @@ function Navbar() {
           />
         </Tabs>
       </Box>
-    </>
+    </Box>
   );
 }
 export default Navbar;
