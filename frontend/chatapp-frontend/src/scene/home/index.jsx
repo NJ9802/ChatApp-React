@@ -1,4 +1,3 @@
-import { Routes, Route } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import { Box } from "@mui/material";
 import ConversationIndex from "../../components/ConversationIndex";
@@ -11,13 +10,13 @@ import ChatRoom from "../../components/ChatRoom";
 import { useState } from "react";
 import ConversationListSideBar from "../../components/ConversationListSideBar";
 
-const Home = () => {
+const Home = ({ home = false }) => {
   // Set initial message input value to an empty string
   const [messageInputValue, setMessageInputValue] = useState("");
 
   return (
     <Box>
-      <Navbar />
+      {home && <Navbar />}
       <Box
         sx={{
           display: { xs: "none", sm: "block" },
@@ -30,16 +29,18 @@ const Home = () => {
             <ConversationListSideBar />
           </div>
           <div as={ChatContainer} style={{ display: "flex", flexGrow: 1 }}>
-            <Routes>
-              <Route index path="/" element={<ChatRoom home={true} />} />
-              <Route index path="/chat" element={<ChatRoom />} />
-            </Routes>
+            <ChatRoom home={home} />
           </div>
         </MainContainer>
       </Box>
-      <Box display={{ sm: "none" }}>
-        <ConversationIndex />
-      </Box>
+
+      {home ? (
+        <Box display={{ sm: "none" }}>
+          <ConversationIndex />
+        </Box>
+      ) : (
+        <ChatRoom />
+      )}
     </Box>
   );
 };

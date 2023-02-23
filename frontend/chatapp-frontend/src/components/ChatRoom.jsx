@@ -6,7 +6,6 @@ import {
 } from "@chatscope/chat-ui-kit-react";
 import { Box, useTheme } from "@mui/material";
 import { tokens } from "../theme";
-import icon from "../assets/react.svg";
 import ChatHeader from "./ChatHeader";
 import MessagesList from "./MessagesList";
 

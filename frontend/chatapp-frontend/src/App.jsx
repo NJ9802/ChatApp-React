@@ -1,5 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 
+import { Routes, Route } from "react-router-dom";
 import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import Home from "./scene/home";
@@ -13,7 +14,10 @@ const App = () => {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <main>
-            <Home />
+            <Routes>
+              <Route index path="/" element={<Home home={true} />} />
+              <Route index path="/chat" element={<Home />} />
+            </Routes>
           </main>
         </ThemeProvider>
       </ColorModeContext.Provider>

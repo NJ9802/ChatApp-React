@@ -21,7 +21,7 @@ const ConversationIndex = () => {
     <Box
       sx={{
         height: { xs: "calc(100vh - 168px)", sm: "100vh" },
-        backgroundColor: colors.primary[500],
+        backgroundColor: colors.primary[700],
 
         "& .cs-conversation__name": {
           color: colors.grey[100],
@@ -42,7 +42,7 @@ const ConversationIndex = () => {
     >
       <ConversationList>
         <div as={Conversation}>
-          <Link to="chat" style={{ textDecoration: "none" }}>
+          <Link to="/chat" style={{ textDecoration: "none" }}>
             <Conversation
               style={style.conversationItem}
               name="Lilly"
@@ -57,7 +57,7 @@ const ConversationIndex = () => {
         </div>
 
         <div as={Conversation}>
-          <Link to="chat" style={{ textDecoration: "none" }}>
+          <Link to="/chat" style={{ textDecoration: "none" }}>
             <Conversation
               style={style.conversationItem}
               name="Joe"
@@ -71,7 +71,7 @@ const ConversationIndex = () => {
           </Link>
         </div>
         <div as={Conversation}>
-          <Link to="chat" style={{ textDecoration: "none" }}>
+          <Link to="/chat" style={{ textDecoration: "none" }}>
             <Conversation
               style={style.conversationItem}
               name="Joe"
@@ -85,7 +85,7 @@ const ConversationIndex = () => {
           </Link>
         </div>
         <div as={Conversation}>
-          <Link to="chat" style={{ textDecoration: "none" }}>
+          <Link to="/chat" style={{ textDecoration: "none" }}>
             <Conversation
               style={style.conversationItem}
               name="Joe"
@@ -99,7 +99,7 @@ const ConversationIndex = () => {
           </Link>
         </div>
         <div as={Conversation}>
-          <Link to="chat" style={{ textDecoration: "none" }}>
+          <Link to="/chat" style={{ textDecoration: "none" }}>
             <Conversation
               style={style.conversationItem}
               name="Joe"
@@ -113,7 +113,7 @@ const ConversationIndex = () => {
           </Link>
         </div>
         <div as={Conversation}>
-          <Link to="chat" style={{ textDecoration: "none" }}>
+          <Link to="/chat" style={{ textDecoration: "none" }}>
             <Conversation
               style={style.conversationItem}
               name="Joe"
@@ -127,7 +127,7 @@ const ConversationIndex = () => {
           </Link>
         </div>
         <div as={Conversation}>
-          <Link to="chat" style={{ textDecoration: "none" }}>
+          <Link to="/chat" style={{ textDecoration: "none" }}>
             <Conversation
               style={style.conversationItem}
               name="Joe"
@@ -141,7 +141,7 @@ const ConversationIndex = () => {
           </Link>
         </div>
         <div as={Conversation}>
-          <Link to="chat" style={{ textDecoration: "none" }}>
+          <Link to="/chat" style={{ textDecoration: "none" }}>
             <Conversation
               style={style.conversationItem}
               name="Joe"
@@ -156,7 +156,7 @@ const ConversationIndex = () => {
         </div>
 
         <div as={Conversation}>
-          <Link to="chat" style={{ textDecoration: "none" }}>
+          <Link to="/chat" style={{ textDecoration: "none" }}>
             <Conversation
               style={style.conversationItem}
               name="Emily"
@@ -171,7 +171,7 @@ const ConversationIndex = () => {
         </div>
 
         <div as={Conversation}>
-          <Link to="chat" style={{ textDecoration: "none" }}>
+          <Link to="/chat" style={{ textDecoration: "none" }}>
             <Conversation
               style={style.conversationItem}
               name="Kai"
@@ -186,7 +186,7 @@ const ConversationIndex = () => {
         </div>
 
         <div as={Conversation}>
-          <Link to="chat" style={{ textDecoration: "none" }}>
+          <Link to="/chat" style={{ textDecoration: "none" }}>
             <Conversation
               style={style.conversationItem}
               name="Akane"
@@ -201,7 +201,7 @@ const ConversationIndex = () => {
         </div>
 
         <div as={Conversation}>
-          <Link to="chat" style={{ textDecoration: "none" }}>
+          <Link to="/chat" style={{ textDecoration: "none" }}>
             <Conversation
               style={style.conversationItem}
               name="Eliot"
@@ -216,7 +216,7 @@ const ConversationIndex = () => {
         </div>
 
         <div as={Conversation}>
-          <Link to="chat" style={{ textDecoration: "none" }}>
+          <Link to="/chat" style={{ textDecoration: "none" }}>
             <Conversation
               style={style.conversationItem}
               name="Zoe"
@@ -231,7 +231,7 @@ const ConversationIndex = () => {
         </div>
 
         <div as={Conversation}>
-          <Link to="chat" style={{ textDecoration: "none" }}>
+          <Link to="/chat" style={{ textDecoration: "none" }}>
             <Conversation
               style={style.conversationItem}
               name="Patrik"
