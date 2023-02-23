@@ -35,6 +35,7 @@ const ChatHeader = () => {
     <Box
       sx={{
         "& .cs-conversation-header": {
+          border: "none",
           backgroundColor: colors.primary[400],
         },
         "& .cs-button--arrow": {

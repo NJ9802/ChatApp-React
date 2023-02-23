@@ -26,7 +26,7 @@ const Home = () => {
           position: "relative",
         }}
       >
-        <MainContainer responsive>
+        <MainContainer style={{ border: "none" }} responsive>
           <div as={Sidebar}>
             <ConversationListSideBar />
           </div>
