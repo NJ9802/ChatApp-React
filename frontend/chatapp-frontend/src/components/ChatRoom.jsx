@@ -1,15 +1,18 @@
 import {
   ChatContainer,
   ConversationHeader,
+  InputToolbox,
   MessageInput,
   MessageList,
 } from "@chatscope/chat-ui-kit-react";
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../theme";
 import ChatHeader from "./ChatHeader";
 import MessagesList from "./MessagesList";
 import lightWallpaper from "../assets/lightWallpaper.jpg";
 import darkWallpaper from "../assets/darkWallpaper.jpg";
+import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
+import AttachFileOutlinedIcon from "@mui/icons-material/AttachFileOutlined";
 
 const ChatRoom = ({ home = false }) => {
   const theme = useTheme();
@@ -80,7 +83,7 @@ const ChatRoom = ({ home = false }) => {
                   <Typography sx={{ my: "20px" }} variant="h6" fontWeight="500">
                     Developed by Nelson Javier
                   </Typography>
-                  
+
                   <Typography sx={{ my: "20px" }} variant="h6" fontWeight="500">
                     Links to my Social Media
                   </Typography>
@@ -103,12 +106,38 @@ const ChatRoom = ({ home = false }) => {
               },
             }}
           >
-            <MessageInput
-              style={{
-                backgroundColor: "transparent",
-              }}
-              placeholder="Type message here"
-            />
+            <div as MessageInput>
+              <Box display="flex" alignItems="center">
+                <MessageInput
+                  style={{
+                    backgroundColor: "transparent",
+                    flexGrow: 1,
+                  }}
+                  placeholder="Type message here"
+                  sendButton={false}
+                  attachButton={false}
+                />
+                <Box>
+                  <InputToolbox
+                    style={{
+                      backgroundColor: "transparent",
+                    }}
+                  >
+                    <IconButton
+                      sx={{ mr: "10px", backgroundColor: colors.primary[400] }}
+                    >
+                      <AttachFileOutlinedIcon />
+                    </IconButton>
+
+                    <IconButton
+                      sx={{ mr: "10px", backgroundColor: colors.primary[400] }}
+                    >
+                      <SendOutlinedIcon />
+                    </IconButton>
+                  </InputToolbox>
+                </Box>
+              </Box>
+            </div>
           </Box>
         </div>
       </ChatContainer>
