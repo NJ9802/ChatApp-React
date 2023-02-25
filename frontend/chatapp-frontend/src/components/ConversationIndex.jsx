@@ -16,7 +16,10 @@ const ConversationIndex = () => {
   const colors = tokens(theme.palette.mode);
 
   const style = {
-    conversationItem: { backgroundColor: "transparent" },
+    conversationItem: {
+      alignItems: "center",
+      backgroundColor: "transparent",
+    },
   };
   return (
     <Box
@@ -33,11 +36,12 @@ const ConversationIndex = () => {
         "& .cs-conversation__last-activity-time": {
           minWidth: "40px",
           color: colors.grey[100],
+          mt: "24px",
         },
         "& .cs-conversation__unread": {
           backgroundColor: colors.greenAccent[400],
           color: colors.grey[900],
-          m: "2px 10px 0 0",
+          m: "11px 10px 0 0",
         },
       }}
     >
