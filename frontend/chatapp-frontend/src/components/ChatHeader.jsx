@@ -1,4 +1,4 @@
-import { Avatar, ConversationHeader } from "@chatscope/chat-ui-kit-react";
+import { Avatar, ConversationHeader, TypingIndicator } from "@chatscope/chat-ui-kit-react";
 import {
   Box,
   IconButton,
@@ -51,6 +51,15 @@ const ChatHeader = () => {
           backgroundColor: colors.primary[400],
           color: colors.grey[300],
         },
+
+        "& .cs-typing-indicator__text": {
+          color: colors.grey[200],
+        },
+
+        "& .cs-typing-indicator__dot,": {
+          backgroundColor: colors.grey[200],
+        },
+
       }}
     >
       <ConversationHeader>
@@ -62,7 +71,14 @@ const ChatHeader = () => {
         <Avatar src={icon} name="Emily" />
         <ConversationHeader.Content
           userName="Emily"
-          info="Active 10 mins ago"
+          info={
+            <TypingIndicator
+              style={{
+                backgroundColor: "transparent",
+              }}
+              content="typing"
+            />
+          }
         />
         <ConversationHeader.Actions>
           <Box

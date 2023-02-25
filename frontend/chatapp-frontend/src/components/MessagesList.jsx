@@ -37,7 +37,7 @@ const MessagesList = () => {
         "& .cs-message-separator": {
           borderRadius: "5px 5px 5px 5px ",
           mx: "auto",
-          my: '20px',
+          my: "20px",
           maxWidth: "250px",
           p: "2px 10px 0 10px",
           backgroundColor: "#c6e3fa",
@@ -47,26 +47,9 @@ const MessagesList = () => {
         "& .cs-message-separator:before, .cs-message-separator:after": {
           backgroundColor: "#5b6873",
         },
-
-        "& .cs-typing-indicator__text": {
-          color: colors.grey[200],
-        },
-
-        "& .cs-typing-indicator__dot,": {
-          backgroundColor: colors.grey[200],
-        },
       }}
     >
-      <MessageList
-        typingIndicator={
-          <TypingIndicator
-            style={{
-              backgroundColor: "transparent",
-            }}
-            content="Emily is typing"
-          />
-        }
-      >
+      <MessageList>
         {messageData.map((data) => (
           <Fragment key={data.key}>
             {data.date !== todayDate && handleTodayDate(data.date)}
