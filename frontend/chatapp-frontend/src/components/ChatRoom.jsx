@@ -4,10 +4,12 @@ import {
   MessageInput,
   MessageList,
 } from "@chatscope/chat-ui-kit-react";
-import { Box, useTheme } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import { tokens } from "../theme";
 import ChatHeader from "./ChatHeader";
 import MessagesList from "./MessagesList";
+import lightWallpaper from "../assets/lightWallpaper.jpg";
+import darkWallpaper from "../assets/darkWallpaper.jpg";
 
 const ChatRoom = ({ home = false }) => {
   const theme = useTheme();
@@ -18,11 +20,17 @@ const ChatRoom = ({ home = false }) => {
       sx={{
         display: { sm: "flex" },
         flexGrow: { sm: 1 },
-
-        height: { xs: "calc(100vh - 56px)", sm: "calc(100vh - 2px)" },
+        height: { xs: "calc(100vh - 56px)", sm: "100vh" },
       }}
     >
-      <ChatContainer>
+      <ChatContainer
+        style={{
+          backgroundImage:
+            theme.palette.mode === "dark"
+              ? `url(${darkWallpaper})`
+              : `url(${lightWallpaper})`,
+        }}
+      >
         <div as={ConversationHeader}>
           <ChatHeader />
         </div>
@@ -36,7 +44,7 @@ const ChatRoom = ({ home = false }) => {
                   sm: "calc(100vh - 133.9px)",
                 },
 
-                backgroundColor: colors.primary[700],
+                backgroundColor: "transparent",
                 color: colors.grey[200],
               }}
             >
@@ -50,7 +58,33 @@ const ChatRoom = ({ home = false }) => {
                   fontSize: "1.2em",
                 }}
               >
-                This is custom content placed instead of message list
+                <Box
+                  sx={{
+                    m: "auto",
+                    p: "20px",
+                    borderRadius: "8px",
+                    maxWidth: "450px",
+                    backgroundColor: colors.primary[400],
+                  }}
+                >
+                  <Typography sx={{ my: "20px" }} variant="h2" fontWeight="500">
+                    Welcome to ChatApp
+                  </Typography>
+
+                  <Typography sx={{ my: "20px" }} variant="h5">
+                    ChatApp was developed using the MERN Stack, with Material UI
+                    and Chat UI Kit React as the CSS Frameworks, making it fully
+                    responsive and adaptable to any device.
+                  </Typography>
+
+                  <Typography sx={{ my: "20px" }} variant="h6" fontWeight="500">
+                    Developed by Nelson Javier
+                  </Typography>
+                  
+                  <Typography sx={{ my: "20px" }} variant="h6" fontWeight="500">
+                    Links to my Social Media
+                  </Typography>
+                </Box>
               </MessageList.Content>
             </Box>
           </div>
@@ -71,7 +105,7 @@ const ChatRoom = ({ home = false }) => {
           >
             <MessageInput
               style={{
-                backgroundColor: colors.primary[400],
+                backgroundColor: "transparent",
               }}
               placeholder="Type message here"
             />

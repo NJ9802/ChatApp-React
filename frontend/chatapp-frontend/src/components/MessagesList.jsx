@@ -26,20 +26,26 @@ const MessagesList = () => {
 
   return (
     <Box
+      backgroundColor="transparent !important"
       sx={{
         height: { xs: "calc(100vh - 178.9px)", sm: "calc(100vh - 133.9px)" },
 
         "& .cs-message-list": {
-          backgroundColor: colors.primary[700],
+          backgroundColor: "transparent",
         },
 
         "& .cs-message-separator": {
-          backgroundColor: colors.primary[700],
-          color: colors.greenAccent[500],
+          borderRadius: "5px 5px 5px 5px ",
+          mx: "auto",
+          my: '20px',
+          maxWidth: "250px",
+          p: "2px 10px 0 10px",
+          backgroundColor: "#c6e3fa",
+          color: "#5b6873",
         },
 
         "& .cs-message-separator:before, .cs-message-separator:after": {
-          backgroundColor: colors.greenAccent[500],
+          backgroundColor: "#5b6873",
         },
 
         "& .cs-typing-indicator__text": {
@@ -55,7 +61,7 @@ const MessagesList = () => {
         typingIndicator={
           <TypingIndicator
             style={{
-              backgroundColor: colors.primary[700],
+              backgroundColor: "transparent",
             }}
             content="Emily is typing"
           />
