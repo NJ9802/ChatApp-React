@@ -32,12 +32,8 @@ function Navbar() {
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
 
-  const [anchorElUser, setAnchorElUser] = useState(null);
   const [value, setValue] = useState(1);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  const [anchorElUser, setAnchorElUser] = useState(null);
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
@@ -45,6 +41,10 @@ function Navbar() {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
   };
 
   const styles = {

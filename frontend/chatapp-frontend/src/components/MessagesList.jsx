@@ -6,12 +6,23 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 import { Box, useTheme } from "@mui/material";
+import { Fragment } from "react";
 import icon from "../assets/react.svg";
 import { tokens } from "../theme";
+import { messageData } from "../data/mockupData";
 
 const MessagesList = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
+  let todayDate = "";
+
+  const handleTodayDate = (date) => {
+    todayDate = date;
+
+    // Change to real date.
+    return <MessageSeparator content={`Saturday, ${date} November 2019`} />;
+  };
 
   return (
     <Box
@@ -50,241 +61,15 @@ const MessagesList = () => {
           />
         }
       >
-        <MessageSeparator content="Saturday, 30 November 2019" />
+        {messageData.map((data) => (
+          <Fragment key={data.key}>
+            {data.date !== todayDate && handleTodayDate(data.date)}
 
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            sender: "Emily",
-            direction: "incoming",
-            position: "single",
-          }}
-        >
-          <Avatar src={icon} name={"Emily"} />
-        </Message>
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            sender: "localSender",
-            direction: "outgoing",
-            position: "single",
-          }}
-        />
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            sender: "Emily",
-            direction: "incoming",
-            position: "first",
-          }}
-          avatarSpacer
-        />
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            sender: "Emily",
-            direction: "incoming",
-            position: "normal",
-          }}
-          avatarSpacer
-        />
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            sender: "Emily",
-            direction: "incoming",
-            position: "normal",
-          }}
-          avatarSpacer
-        />
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            sender: "Emily",
-            direction: "incoming",
-            position: "last",
-          }}
-        >
-          <Avatar src={icon} name={"Emily"} />
-        </Message>
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            direction: "outgoing",
-            position: "first",
-          }}
-        />
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            direction: "outgoing",
-            position: "normal",
-          }}
-        />
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            direction: "outgoing",
-            position: "normal",
-          }}
-        />
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            direction: "outgoing",
-            position: "last",
-          }}
-        />
-
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            sender: "Emily",
-            direction: "incoming",
-            position: "first",
-          }}
-          avatarSpacer
-        />
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            sender: "Emily",
-            direction: "incoming",
-            position: "last",
-          }}
-        >
-          <Avatar src={icon} name={"Emily"} />
-        </Message>
-
-        <MessageSeparator content="Saturday, 31 November 2019" />
-
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            sender: "Emily",
-            direction: "incoming",
-            position: "single",
-          }}
-        >
-          <Avatar src={icon} name={"Emily"} />
-        </Message>
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            sender: "localSender",
-            direction: "outgoing",
-            position: "single",
-          }}
-        />
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            sender: "Emily",
-            direction: "incoming",
-            position: "first",
-          }}
-          avatarSpacer
-        />
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            sender: "Emily",
-            direction: "incoming",
-            position: "normal",
-          }}
-          avatarSpacer
-        />
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            sender: "Emily",
-            direction: "incoming",
-            position: "normal",
-          }}
-          avatarSpacer
-        />
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            sender: "Emily",
-            direction: "incoming",
-            position: "last",
-          }}
-        >
-          <Avatar src={icon} name={"Emily"} />
-        </Message>
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            direction: "outgoing",
-            position: "first",
-          }}
-        />
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            direction: "outgoing",
-            position: "normal",
-          }}
-        />
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            direction: "outgoing",
-            position: "normal",
-          }}
-        />
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            direction: "outgoing",
-            position: "last",
-          }}
-        />
-
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            sender: "Emily",
-            direction: "incoming",
-            position: "first",
-          }}
-          avatarSpacer
-        />
-        <Message
-          model={{
-            message: "Hello my friend",
-            sentTime: "15 mins ago",
-            sender: "Emily",
-            direction: "incoming",
-            position: "last",
-          }}
-        >
-          <Avatar src={icon} name={"Emily"} />
-        </Message>
+            <Message model={data}>
+              <Avatar src={icon} name={data.sender} />
+            </Message>
+          </Fragment>
+        ))}
       </MessageList>
     </Box>
   );
