@@ -15,12 +15,12 @@ const Home = ({ home = false }) => {
   const [messageInputValue, setMessageInputValue] = useState("");
 
   return (
-    <Box>
+    <Box sx={{ m: { sm: "20px" } }}>
       {home && <Navbar />}
       <Box
         sx={{
           display: { xs: "none", sm: "block" },
-          height: { xs: "calc(100vh - 114px)", sm: "100vh" },
+          height: { xs: "calc(100vh - 114px)", sm: "calc(100vh - 40px)" },
           position: "relative",
         }}
       >

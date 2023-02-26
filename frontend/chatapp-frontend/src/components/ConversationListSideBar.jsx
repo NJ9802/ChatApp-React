@@ -43,11 +43,11 @@ const ConversationListSideBar = () => {
   };
 
   return (
-    <Box height="100vh">
+    <Box height="calc(100vh - 40px)">
       <Sidebar
         position="left"
         scrollable={false}
-        style={{ borderRight: "1px solid" }}
+        style={{ borderRight: "0.5px solid" }}
       >
         <Box
           sx={{
